@@ -280,5 +280,6 @@ serve((req) => {
     return handleTokenCount(req, requestId);
   }
 
+  console.log(`404 - ${req.method} ${url.pathname}`);
   return new Response("Not Found", { status: 404 });
 }, config.autoPort ? undefined : { hostname: config.host, port: config.port });
